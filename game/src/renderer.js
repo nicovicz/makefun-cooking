@@ -61,11 +61,11 @@ function drawBackdropAndFloor(ctx, W, H, time) {
     }
   }
 
-  // Warm hanging paper lantern glow in corners of the kitchen
+  // Warm hanging paper lantern glow and subtle ember rim in corners of the kitchen
   const pulse = 0.85 + Math.sin(time * 2.4) * 0.1;
   for (const [lx, ly] of [[KITCHEN_X + 70, KITCHEN_Y + 40], [KITCHEN_X + floorW - 70, KITCHEN_Y + 40], [W * 0.5, KITCHEN_Y + floorH - 40]]) {
-    const g = ctx.createRadialGradient(lx, ly, 10, lx, ly, 240);
-    g.addColorStop(0, `rgba(255, 178, 72, ${0.14 * pulse})`);
+    const g = ctx.createRadialGradient(lx, ly, 10, lx, ly, 250);
+    g.addColorStop(0, `rgba(255, 182, 78, ${0.16 * pulse})`);
     g.addColorStop(1, 'rgba(255, 178, 72, 0)');
     ctx.fillStyle = g;
     ctx.fillRect(KITCHEN_X, KITCHEN_Y, floorW, floorH);
